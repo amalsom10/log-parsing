@@ -67,7 +67,7 @@ if __name__ == "__main__":
     file_path = args.file_path
     start_time = time_check(args.st_time)
     en_time = time_check(args.end_time)
-    if en_time <= start_time:
+    if en_time <= start_time or en_time == 0 or start_time == 0:
         logger.info("end time should be larger than start time or issue with the time format")
         exit(0)
     stats = log_fetch(start_time, en_time, file_path)
